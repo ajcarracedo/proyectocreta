@@ -19,6 +19,8 @@
 
  int analog_x = 0;
  int analog_y = 0;
+
+ String serial = "";
  
  void setup() {
    Serial.begin(57600);
@@ -49,34 +51,31 @@
    void loop() { 
     
     if(pressed_a == digitalRead(PIN_BUTTON_A)){ 
-      Serial.println("a");Serial3.println("a");
+      Serial3.println("a");Serial.println("a");
    }
    if(pressed_b == digitalRead(PIN_BUTTON_B)){
-      Serial.println("b");Serial3.println("b");
+      Serial3.println("b");Serial.println("b");
    } 
    if(pressed_c == digitalRead(PIN_BUTTON_C)){ 
-      Serial.println("c");Serial3.println("c");
+      Serial3.println("c");Serial.println("c");
    } 
    if(pressed_d == digitalRead(PIN_BUTTON_D)){ 
-      Serial.println("d");Serial3.println("d");
+      Serial3.println("d");Serial.println("d");
    } 
    if(pressed_e == digitalRead(PIN_BUTTON_E)){ 
-      Serial.println("e");Serial3.println("e");
+      Serial3.println("e");Serial.println("e");
    } 
    if(pressed_f == digitalRead(PIN_BUTTON_F)){ 
-      Serial.println("f");Serial3.println("f");
+      Serial3.println("f");Serial.println("f");
    } 
     if(pressed_k == digitalRead(PIN_BUTTON_K)){ 
-      Serial.println("k");Serial3.println("k");
+      Serial3.println("k");Serial.println("k");
    }
 
    analog_x = analogRead(PIN_ANALOG_X);
    analog_y = analogRead(PIN_ANALOG_Y);
-   Serial.print("x=");Serial3.print("x=");
-   Serial.print(analog_x);Serial3.print(analog_x);
-   Serial.print(" ");Serial3.print(" ");
-   Serial.print("y=");Serial3.print("y=");
-   Serialhuy.println(analog_y);Serial3.println(analog_y);
+   serial = "x=" + String(analog_x) + " " + "y=" + String(analog_y);
+   Serial3.println(serial);Serial.println(serial);
    
    delay(100);
  }
